@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ripple Card Hover Effects</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=WindSong&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat&family=Creepster&family=Quintessential&family=Rye&family=UnifrakturMaguntia&family=Kranky&family=Nosifer&family=Noto+Sans+Rubic&family=Noto+Color+Emoji&family=Dancing+Script&family=Fuggles&family=Indie+Flower&family=Kalam&family=Montserrat:wght@100&family=Permanent+Marker&family=Poppins&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/9f71dab2a2.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./styles.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="card" data-text="London" style="--img:url('images/london.jpg')"></div>
+            <div class="card" data-text="Egypt" style="--img:url('images/egypt.png')"></div>
+            <div class="card" data-text="Rome" style="--img:url('images/rome.jpg')"></div>
+            <div class="card" data-text="Japan" style="--img:url('images/japan.jpg')"></div>
+        </div>
+        <script>
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.onmousemove = function(e) {
+                    const x = e.pageX - card.offsetLeft;
+                    const y = e.pageY - card.offsetTop;
+
+                    card.style.setProperty('--x', x + 'px');
+                    card.style.setProperty('--y', y + 'px');
+                };
+            })
+        </script>
+    </body>
+</html>
